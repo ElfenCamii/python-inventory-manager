@@ -39,9 +39,12 @@ while True:
             user_update_product = input('\nIngrese el nombre del producto que desea actualizar: ').lower()
             inventory_manager.update_cantidad(inventario, user_update_product)
         elif user_action == 3:
-            print('\nProductos en el inventario:')
-            for producto, cantidad in inventario.items():
-                print(f'    {producto} → {cantidad}')
+            if not inventario:
+                print("\nEl inventario está vacío")
+            else:
+                print('\nProductos en el inventario:')
+                for producto, cantidad in inventario.items():
+                    print(f'    {producto} → {cantidad}')
         elif user_action == 4:
             user_pop_product = input('\nEscriba el producto que desea eliminar: ')
             inventory_manager.del_product(inventario, user_pop_product)
