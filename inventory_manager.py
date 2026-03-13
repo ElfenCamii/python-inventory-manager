@@ -40,6 +40,18 @@ def update_cantidad(inventario, producto):
         print('\nEl producto no se puede actualizar porque no existe!')
 
 
+def view_inventory(inventario):
+
+    if not inventario:
+        print("\nEl inventario está vacío")
+        return
+
+    print('\n-------- INVENTARIO --------')
+
+    for producto, cantidad in sorted(inventario.items()):
+        print(f'    {producto:<15} → {cantidad}')
+
+
 def del_product(inventario, producto):
 
     if producto in inventario:
