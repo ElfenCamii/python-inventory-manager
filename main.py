@@ -24,11 +24,12 @@ while True:
     2. Actualizar cantidad producto
     3. Mostrar inventario
     4. Eliminar un producto
-    5. Salir
+    5. Buscar un producto
+    6. Salir
 ''')
     try:
         user_action = int(input('Que desea hacer: '))
-        if user_action == 5:
+        if user_action == 6:
             inventory_manager.salir()
             break
         elif user_action == 1:
@@ -48,6 +49,9 @@ while True:
         elif user_action == 4:
             user_pop_product = input('\nEscriba el producto que desea eliminar: ')
             inventory_manager.del_product(inventario, user_pop_product)
+        elif user_action == 5:
+            user_search = input("Ingrese el nombre del producto: ").strip().lower()
+            inventory_manager.search_product(inventario, user_search)
 
     except ValueError:
         print('El valor ingresado no es un número!')

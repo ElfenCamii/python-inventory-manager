@@ -51,6 +51,17 @@ def del_product(inventario, producto):
         print(f'El producto "{producto}" no existe')
 
 
+def search_product(inventario, producto):
+
+    if producto in inventario:
+        cantidad = inventario[producto]
+        print("\nProducto encontrado:")
+        print(f"{producto:<15} | {cantidad}")
+
+    else:
+        print("\nEl producto no existe en el inventario.")
+
+
 def salir():
     print('--------------------------')
     print('-------- Gracias! --------')
