@@ -53,7 +53,7 @@ python-inventory-manager/
 │
 ├── main.py
 ├── inventory_manager.py
-├── inventory.txt
+├── inventory.json
 └── README.md
 ```
 
