@@ -74,6 +74,26 @@ def search_product(inventario, producto):
         print("\nEl producto no existe en el inventario.")
 
 
+def inventory_statistics(inventario):
+
+    total_productos = []
+    total_items = []
+    
+    if not inventario:
+        print(f'{inventario} vacío')
+        return
+    
+    for productos, cantidad in inventario.items():
+        total_productos.append(productos)
+        total_items.append(cantidad)
+
+    print(f'\nTotal de productos diferentes: {len(total_productos)}')
+    print(f'Cantidad total de items: {sum(total_items)}')
+    print(f'\nProducto con mayot stock: {max(total_items)}')
+    print(f'Producto con menor stock: {min(total_items)}')
+
+
+
 def salir():
     print('--------------------------')
     print('-------- Gracias! --------')
