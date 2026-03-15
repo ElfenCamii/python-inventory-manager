@@ -78,19 +78,19 @@ def inventory_statistics(inventario):
 
     total_productos = []
     total_items = []
-    
+
     if not inventario:
         print(f'{inventario} vacío')
         return
     
-    for productos, cantidad in inventario.items():
-        total_productos.append(productos)
-        total_items.append(cantidad)
+    print(f'\nTotal de productos diferentes: {len(inventario)}')
+    print(f'Cantidad total de items: {sum(inventario.values())}')
 
-    print(f'\nTotal de productos diferentes: {len(total_productos)}')
-    print(f'Cantidad total de items: {sum(total_items)}')
-    print(f'\nProducto con mayot stock: {max(total_items)}')
-    print(f'Producto con menor stock: {min(total_items)}')
+    mayor_stock = max(inventario, key=inventario.get)
+    menor_stock = min(inventario, key=inventario.get)
+
+    print(f'\nProducto con mayot stock: {mayor_stock} ({inventario[mayor_stock]})')
+    print(f'Producto con menor stock: {menor_stock} ({inventario[menor_stock]})')
 
 
 
